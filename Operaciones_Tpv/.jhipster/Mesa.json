@@ -1,0 +1,39 @@
+{
+  "annotations": {
+    "changelogDate": "20251106030149"
+  },
+  "applications": ["Operaciones_Tpv"],
+  "clientRootFolder": "Operaciones_Tpv",
+  "databaseType": "sql",
+  "fields": [
+    {
+      "fieldName": "numero",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required", "unique"]
+    },
+    {
+      "fieldName": "capacidad",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required", "min"],
+      "fieldValidateRulesMin": "1"
+    },
+    {
+      "fieldName": "estado",
+      "fieldType": "EstadoMesa",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "LIBRE,OCUPADA,RESERVADA"
+    }
+  ],
+  "microserviceName": "Operaciones_Tpv",
+  "name": "Mesa",
+  "relationships": [
+    {
+      "otherEntityName": "pedido",
+      "otherEntityRelationshipName": "mesa",
+      "relationshipName": "pedido",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no"
+}

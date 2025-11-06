@@ -1,0 +1,33 @@
+{
+  "annotations": {
+    "changelogDate": "20251106030349"
+  },
+  "applications": ["Operaciones_Tpv"],
+  "clientRootFolder": "Operaciones_Tpv",
+  "databaseType": "sql",
+  "fields": [
+    {
+      "fieldName": "cantidad",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required", "min"],
+      "fieldValidateRulesMin": "1"
+    },
+    {
+      "fieldName": "precioUnitario",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "microserviceName": "Operaciones_Tpv",
+  "name": "ItemPedido",
+  "relationships": [
+    {
+      "otherEntityName": "pedido",
+      "otherEntityRelationshipName": "itemPedido",
+      "relationshipName": "pedido",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no"
+}

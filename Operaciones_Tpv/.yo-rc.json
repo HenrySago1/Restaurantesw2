@@ -1,0 +1,22 @@
+{
+  "generator-jhipster": {
+    "applicationIndex": 2,
+    "applicationType": "microservice",
+    "authenticationType": "jwt",
+    "baseName": "Operaciones_Tpv",
+    "devDatabaseType": "postgresql",
+    "entities": ["Mesa", "Pedido", "ItemPedido", "Factura"],
+    "jhipsterVersion": "8.11.0",
+    "jwtSecretKey": "YWE5YTgzMzFhZDhiODEzYjU4YWFjZjhkOThkZWRmNmNhYTE4MzAyZmI4MjJiNzFkODZiY2MwNDUzZGU2ZWFjNjgyMGJlYWRjZTk4NTc0ZWQ0ODU4YjgxMTlkMTg5NmM0YTQ4YTMxNGE1YWZlZDMwODU1MWJmZmM4Y2NlN2Y3NDE=",
+    "languages": ["en"],
+    "lastLiquibaseTimestamp": 1762398289000,
+    "monorepository": true,
+    "nativeLanguage": "en",
+    "prodDatabaseType": "postgresql",
+    "serverPort": "8083",
+    "serviceDiscoveryType": "eureka",
+    "skipClient": true,
+    "skipCommitHook": true,
+    "skipUserManagement": true
+  }
+}

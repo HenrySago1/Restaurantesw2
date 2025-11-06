@@ -1,0 +1,47 @@
+{
+  "annotations": {
+    "changelogDate": "20251106030249"
+  },
+  "applications": ["Operaciones_Tpv"],
+  "clientRootFolder": "Operaciones_Tpv",
+  "databaseType": "sql",
+  "fields": [
+    {
+      "fieldName": "fechaPedido",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "estado",
+      "fieldType": "EstadoPedido",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "EN_PREPARACION,SERVIDO,PAGADO"
+    }
+  ],
+  "microserviceName": "Operaciones_Tpv",
+  "name": "Pedido",
+  "relationships": [
+    {
+      "otherEntityName": "factura",
+      "relationshipName": "factura",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "otherEntityName": "itemPedido",
+      "otherEntityRelationshipName": "pedido",
+      "relationshipName": "itemPedido",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "mesa",
+      "otherEntityRelationshipName": "pedido",
+      "relationshipName": "mesa",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no"
+}

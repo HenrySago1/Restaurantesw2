@@ -1,0 +1,30 @@
+{
+  "annotations": {
+    "changelogDate": "20251106030449"
+  },
+  "applications": ["Operaciones_Tpv"],
+  "clientRootFolder": "Operaciones_Tpv",
+  "databaseType": "sql",
+  "fields": [
+    {
+      "fieldName": "fechaFactura",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "montoTotal",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "metodoPago",
+      "fieldType": "MetodoPago",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "EFECTIVO,QR,TARJETA"
+    }
+  ],
+  "microserviceName": "Operaciones_Tpv",
+  "name": "Factura",
+  "relationships": [],
+  "searchEngine": "no"
+}
