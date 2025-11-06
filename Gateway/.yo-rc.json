@@ -1,0 +1,19 @@
+{
+  "generator-jhipster": {
+    "applicationIndex": 0,
+    "applicationType": "gateway",
+    "authenticationType": "jwt",
+    "baseName": "Gateway",
+    "devServerPort": 4200,
+    "entities": [],
+    "jhipsterVersion": "8.11.0",
+    "jwtSecretKey": "YjA5NzY5NDdhNzI0MGQwMTE1M2Y0NDdiMGY5NWQxOWEzMGJhYzA4YmExOWZmYzdmYmRhYmQ0MjU4NzI5OWY0ZTlmZDhjMjM0YzgwMTI5YzhjOGJjNGM1YzI3ZTdjMDYyMGE4OGM1ODhiYzgyZDNhNTQ0NDQ5MGRjMjQ4Yjk5ZDU=",
+    "languages": ["en"],
+    "monorepository": true,
+    "nativeLanguage": "en",
+    "reactive": true,
+    "serverPort": "8081",
+    "serviceDiscoveryType": "eureka",
+    "skipCommitHook": true
+  }
+}
