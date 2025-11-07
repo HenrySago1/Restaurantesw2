@@ -1,0 +1,160 @@
+// ====================================================================
+// 1. DEFINICIÓN DEL MICROSERVICIO DE CRM Y RESERVAS (POSTGRESQL)
+// ====================================================================
+
+application {
+    config {
+        baseName CRM_Reservas,
+        applicationType microservice,
+        serviceDiscoveryType eureka,
+        authenticationType jwt,
+        prodDatabaseType postgresql,
+        devDatabaseType postgresql,
+        serverPort 8082 // Puerto asignado
+    }
+    entities Cliente, Reserva, Contacto
+}
+
+entity Cliente {
+    nombre String required,
+    apellido String required,
+    email String unique,
+    telefono String
+}
+
+enum EstadoReserva {
+    PENDIENTE, CONFIRMADA, CANCELADA, EXPIRADA
+}
+
+entity Reserva {
+    fechaHora ZonedDateTime required,
+    personas Integer min(1) max(30),
+    estado EstadoReserva required,
+    observaciones Text
+}
+
+entity Contacto {
+    fechaContacto ZonedDateTime,
+    motivo String required
+}
+
+relationship OneToMany {
+    Cliente to Reserva,
+    Cliente to Contacto
+}
+
+// ====================================================================
+// 2. DEFINICIÓN DEL MICROSERVICIO DE OPERACIONES (POSTGRESQL)
+// ====================================================================
+
+application {
+    config {
+        baseName Operaciones_Tpv,
+        applicationType microservice,
+        serviceDiscoveryType eureka,
+        authenticationType jwt,
+        prodDatabaseType postgresql,
+        devDatabaseType postgresql,
+        serverPort 8083 // Puerto asignado
+    }
+    entities Mesa, Pedido, ItemPedido, Factura
+}
+
+entity Mesa {
+    numero Integer required unique,
+    capacidad Integer required min(1),
+    estado EstadoMesa required // LIBRE, OCUPADA, RESERVADA
+}
+
+enum EstadoMesa {
+    LIBRE, OCUPADA, RESERVADA
+}
+
+entity Pedido {
+    fechaPedido ZonedDateTime required,
+    estado EstadoPedido required // EN_PREPARACION, SERVIDO, PAGADO
+}
+
+enum EstadoPedido {
+    EN_PREPARACION, SERVIDO, PAGADO
+}
+
+entity ItemPedido {
+    cantidad Integer required min(1),
+    precioUnitario BigDecimal required
+}
+
+entity Factura {
+    fechaFactura ZonedDateTime required,
+    montoTotal BigDecimal required,
+    metodoPago MetodoPago required
+}
+
+enum MetodoPago {
+    EFECTIVO, QR, TARJETA
+}
+
+relationship OneToOne {
+    Pedido{factura required} to Factura
+}
+
+relationship OneToMany {
+    Mesa to Pedido,
+    Pedido to ItemPedido
+}
+
+// ====================================================================
+// 3. DEFINICIÓN DEL MICROSERVICIO DE INVENTARIO Y MENÚ (MONGODB)
+// ====================================================================
+
+application {
+    config {
+        baseName Inventario_Menu,
+        applicationType microservice,
+        serviceDiscoveryType eureka,
+        authenticationType jwt,
+        prodDatabaseType mongodb,
+        devDatabaseType mongodb,
+        serverPort 8084 // Puerto asignado
+    }
+    entities Plato, Insumo, Categoria
+}
+
+entity Plato {
+    nombre String required,
+    descripcion String,
+    precio BigDecimal required,
+    activo Boolean
+}
+
+entity Insumo {
+    nombre String required unique,
+    stockMinimo Integer,
+    stockActual Integer
+}
+
+entity Categoria {
+    nombre String required unique
+}
+
+relationship ManyToMany {
+    Plato to Categoria
+}
+
+relationship ManyToOne {
+    Insumo to Plato // Los ingredientes que componen el plato
+}
+
+// ====================================================================
+// 4. DEFINICIÓN DEL GATEWAY
+// ====================================================================
+
+application {
+    config {
+        baseName Gateway,
+        applicationType gateway,
+        serviceDiscoveryType eureka,
+        authenticationType jwt,
+        serverPort 8081
+    }
+}

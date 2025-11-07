@@ -1,0 +1,35 @@
+{
+  "annotations": {
+    "changelogDate": "20251106030925"
+  },
+  "applications": ["Inventario_Menu"],
+  "clientRootFolder": "Inventario_Menu",
+  "databaseType": "mongodb",
+  "fields": [
+    {
+      "fieldName": "nombre",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "unique"]
+    },
+    {
+      "fieldName": "stockMinimo",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "stockActual",
+      "fieldType": "Integer"
+    }
+  ],
+  "microserviceName": "Inventario_Menu",
+  "name": "Insumo",
+  "relationships": [
+    {
+      "otherEntityName": "plato",
+      "otherEntityRelationshipName": "insumo",
+      "relationshipName": "plato",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no"
+}

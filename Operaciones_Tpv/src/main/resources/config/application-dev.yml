@@ -55,7 +55,7 @@ spring:
       # it can be set to any label, branch or commit of the configuration source Git repository
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:postgresql://localhost:5432/Operaciones_Tpv
+    url: jdbc:h2:mem:Operaciones_Tpv;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
     username: Operaciones_Tpv
     password:
     hikari:

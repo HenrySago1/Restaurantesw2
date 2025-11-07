@@ -1,0 +1,44 @@
+{
+  "annotations": {
+    "changelogDate": "20251106031029"
+  },
+  "applications": ["CRM_Reservas"],
+  "clientRootFolder": "CRM_Reservas",
+  "databaseType": "sql",
+  "fields": [
+    {
+      "fieldName": "fechaHora",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "personas",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["min", "max"],
+      "fieldValidateRulesMax": "30",
+      "fieldValidateRulesMin": "1"
+    },
+    {
+      "fieldName": "estado",
+      "fieldType": "EstadoReserva",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "PENDIENTE,CONFIRMADA,CANCELADA,EXPIRADA"
+    },
+    {
+      "fieldName": "observaciones",
+      "fieldType": "String"
+    }
+  ],
+  "microserviceName": "CRM_Reservas",
+  "name": "Reserva",
+  "relationships": [
+    {
+      "otherEntityName": "cliente",
+      "otherEntityRelationshipName": "reserva",
+      "relationshipName": "cliente",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no"
+}

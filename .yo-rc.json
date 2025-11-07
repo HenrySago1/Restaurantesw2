@@ -1,0 +1,21 @@
+{
+  "generator-jhipster": {
+    "applicationType": "microservice",
+    "authenticationType": "jwt",
+    "baseName": "Inventario_Menu",
+    "creationTimestamp": 1762398454219,
+    "databaseType": "mongodb",
+    "devDatabaseType": "mongodb",
+    "entities": ["Cliente", "Reserva", "Contacto", "Plato", "Insumo", "Categoria"],
+    "jhipsterVersion": "8.11.0",
+    "jwtSecretKey": "NjA4YTNlN2ZjMzljMmE3OTFlNTY2MzJmYjdiYWRhMTQ1ZmVkM2MwNjZlZmUwMGY5OGQ0MTVkZmY2NWM0ZTVlZGRlMTYwY2RkOTY2Y2E5YjhmNjBjNGIxMGU3YmIwODM3OTI0YjBiOGYxZjI5YTQxNDE1NWY5YTQxZWU1MDk3MGI=",
+    "languages": ["en"],
+    "lastLiquibaseTimestamp": 1762398566000,
+    "nativeLanguage": "en",
+    "prodDatabaseType": "mongodb",
+    "serverPort": "8084",
+    "serviceDiscoveryType": "eureka",
+    "skipClient": true,
+    "skipUserManagement": true
+  }
+}

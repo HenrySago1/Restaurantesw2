@@ -1,0 +1,23 @@
+{
+  "generator-jhipster": {
+    "applicationType": "microservice",
+    "authenticationType": "jwt",
+    "baseName": "Inventario_Menu",
+    "creationTimestamp": 1762398572541,
+    "databaseType": "mongodb",
+    "devDatabaseType": "mongodb",
+    "entities": ["Plato", "Insumo", "Categoria"],
+    "jhipsterVersion": "8.11.0",
+    "jwtSecretKey": "YTM3NWIxNDhkNjA0ZmRkMTc4N2U5OTc4MzZjYmQwMTIxZGJlYTRhM2RmY2ZkM2ZiOTFhNjU1MjYyNjAzZTdkNGI2MmNhNjI1YTVlOWI1MGM2YjZjZGI4MGU0NjEyOWU5ZDdiODNjYTcwMDU3NTNiZDcyZjBmNGI3ZjllMmE2YWY=",
+    "languages": ["en"],
+    "lastLiquibaseTimestamp": 1762398670000,
+    "monorepository": true,
+    "nativeLanguage": "en",
+    "prodDatabaseType": "mongodb",
+    "serverPort": "8084",
+    "serviceDiscoveryType": "eureka",
+    "skipClient": true,
+    "skipCommitHook": true,
+    "skipUserManagement": true
+  }
+}

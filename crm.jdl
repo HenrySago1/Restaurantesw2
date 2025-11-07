@@ -1,0 +1,40 @@
+application {
+    config {
+        baseName CRM_Reservas,
+        applicationType microservice,
+        serviceDiscoveryType eureka,
+        authenticationType jwt,
+        prodDatabaseType postgresql,
+        devDatabaseType postgresql,
+        serverPort 8082
+    }
+    entities Cliente, Reserva, Contacto
+}
+
+entity Cliente {
+    nombre String required,
+    apellido String required,
+    email String unique,
+    telefono String
+}
+
+enum EstadoReserva {
+    PENDIENTE, CONFIRMADA, CANCELADA, EXPIRADA
+}
+
+entity Reserva {
+    fechaHora ZonedDateTime required,
+    personas Integer min(1) max(30),
+    estado EstadoReserva required,
+    observaciones String
+}
+
+entity Contacto {
+    fechaContacto ZonedDateTime,
+    motivo String required
+}
+
+relationship OneToMany {
+    Cliente to Reserva,
+    Cliente to Contacto
+}

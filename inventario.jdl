@@ -1,0 +1,38 @@
+application {
+    config {
+        baseName Inventario_Menu,
+        applicationType microservice,
+        serviceDiscoveryType eureka,
+        authenticationType jwt,
+        databaseType mongodb,
+        devDatabaseType mongodb,
+        prodDatabaseType mongodb,
+        serverPort 8084
+    }
+    entities Plato, Insumo, Categoria
+}
+
+entity Plato {
+    nombre String required,
+    descripcion String,
+    precio BigDecimal required,
+    activo Boolean
+}
+
+entity Insumo {
+    nombre String required unique,
+    stockMinimo Integer,
+    stockActual Integer
+}
+
+entity Categoria {
+    nombre String required unique
+}
+
+relationship ManyToMany {
+    Plato to Categoria
+}
+
+relationship ManyToOne {
+    Insumo to Plato
+}

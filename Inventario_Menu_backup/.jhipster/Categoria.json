@@ -1,0 +1,27 @@
+{
+  "annotations": {
+    "changelogDate": "20251106031110"
+  },
+  "applications": ["Inventario_Menu"],
+  "clientRootFolder": "Inventario_Menu",
+  "databaseType": "mongodb",
+  "fields": [
+    {
+      "fieldName": "nombre",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "unique"]
+    }
+  ],
+  "microserviceName": "Inventario_Menu",
+  "name": "Categoria",
+  "relationships": [
+    {
+      "otherEntityName": "plato",
+      "otherEntityRelationshipName": "categoria",
+      "relationshipName": "plato",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "searchEngine": "no"
+}

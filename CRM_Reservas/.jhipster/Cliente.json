@@ -1,0 +1,48 @@
+{
+  "annotations": {
+    "changelogDate": "20251106031028"
+  },
+  "applications": ["CRM_Reservas"],
+  "clientRootFolder": "CRM_Reservas",
+  "databaseType": "sql",
+  "fields": [
+    {
+      "fieldName": "nombre",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "apellido",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String",
+      "fieldValidateRules": ["unique"]
+    },
+    {
+      "fieldName": "telefono",
+      "fieldType": "String"
+    }
+  ],
+  "microserviceName": "CRM_Reservas",
+  "name": "Cliente",
+  "relationships": [
+    {
+      "otherEntityName": "reserva",
+      "otherEntityRelationshipName": "cliente",
+      "relationshipName": "reserva",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "contacto",
+      "otherEntityRelationshipName": "cliente",
+      "relationshipName": "contacto",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no"
+}

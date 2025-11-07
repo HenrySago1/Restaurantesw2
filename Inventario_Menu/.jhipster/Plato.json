@@ -1,0 +1,47 @@
+{
+  "annotations": {
+    "changelogDate": "20251106031354"
+  },
+  "applications": ["Inventario_Menu"],
+  "clientRootFolder": "Inventario_Menu",
+  "databaseType": "mongodb",
+  "fields": [
+    {
+      "fieldName": "nombre",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "descripcion",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "precio",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "activo",
+      "fieldType": "Boolean"
+    }
+  ],
+  "microserviceName": "Inventario_Menu",
+  "name": "Plato",
+  "relationships": [
+    {
+      "otherEntityName": "categoria",
+      "otherEntityRelationshipName": "plato",
+      "relationshipName": "categoria",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "insumo",
+      "otherEntityRelationshipName": "plato",
+      "relationshipName": "insumo",
+      "relationshipSide": "right",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no"
+}

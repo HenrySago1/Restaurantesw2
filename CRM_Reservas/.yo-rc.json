@@ -1,0 +1,22 @@
+{
+  "generator-jhipster": {
+    "applicationType": "microservice",
+    "authenticationType": "jwt",
+    "baseName": "CRM_Reservas",
+    "creationTimestamp": 1762398524704,
+    "devDatabaseType": "postgresql",
+    "entities": ["Cliente", "Reserva", "Contacto"],
+    "jhipsterVersion": "8.11.0",
+    "jwtSecretKey": "NTQyOTJmN2Q5M2Q0OGRiMGE1MzY5ZjY0NDdjOTM3MjgxNWM2M2ZiN2U5OWNkZjVlYmM0MjNjYmRlYzNhOWE2OGI4MDk3OGZmNzY3MzYzZTgyYWM2MTIxY2UyMTgxNWJjYTNhMTNjNzA3NGQ4MzVkMTUxOWNhN2IwYzE2YWUxNmU=",
+    "languages": ["en"],
+    "lastLiquibaseTimestamp": 1762398630000,
+    "monorepository": true,
+    "nativeLanguage": "en",
+    "prodDatabaseType": "postgresql",
+    "serverPort": "8082",
+    "serviceDiscoveryType": "eureka",
+    "skipClient": true,
+    "skipCommitHook": true,
+    "skipUserManagement": true
+  }
+}

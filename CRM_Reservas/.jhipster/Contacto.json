@@ -1,0 +1,31 @@
+{
+  "annotations": {
+    "changelogDate": "20251106031030"
+  },
+  "applications": ["CRM_Reservas"],
+  "clientRootFolder": "CRM_Reservas",
+  "databaseType": "sql",
+  "fields": [
+    {
+      "fieldName": "fechaContacto",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "motivo",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "microserviceName": "CRM_Reservas",
+  "name": "Contacto",
+  "relationships": [
+    {
+      "otherEntityName": "cliente",
+      "otherEntityRelationshipName": "contacto",
+      "relationshipName": "cliente",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no"
+}
